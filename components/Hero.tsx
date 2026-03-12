@@ -173,9 +173,9 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="text-lg mb-6" style={{ color: "#9aa0b8" }}>
-            <span style={{ color: "#6b8afd" }}>AI/ML Enthusiast</span>
-            {" & "}
-            <span style={{ color: "#e8eaf0" }}>Full Stack Developer</span>
+            <span style={{ color: "#6b8afd" }}>AI/ML Enthusiast, </span>
+            <span style={{ color: "#b5c3ee" }}>Developer, </span>
+            <span style={{ color: "#e8eaf0" }}>Videographer & Editor</span>
           </p>
 
           {/* Location + Email */}
