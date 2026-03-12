@@ -1,14 +1,20 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Mail, Phone, MapPin, MessageSquare, Send, Music,} from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, Send } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
-
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID  = "service_ytd2e4o";
+const EMAILJS_TEMPLATE_ID = "template_2mign18";
+const EMAILJS_PUBLIC_KEY  = "9WT5NOcsrGUQPoWIC";
+
+type FormStatus = "idle" | "sending" | "sent" | "error";
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,10 +33,25 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise(r => setTimeout(r, 1500));
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:  form.name,
+          from_email: form.email,
+          message:    form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
@@ -39,7 +60,7 @@ export default function Contact() {
         <div className="fade-up text-center mb-12">
           <h2 className="section-heading mb-4">Let&apos;s Connect</h2>
           <p style={{ color: "var(--text-secondary)", maxWidth: "580px", margin: "0 auto", lineHeight: 1.7 }}>
-            I'm always open to discussing new opportunities, collaborations, feel free to reach out!
+            I&apos;m always open to discussing new opportunities, collaborations, feel free to reach out!
           </p>
         </div>
 
@@ -50,12 +71,9 @@ export default function Contact() {
               Get in Touch
             </h3>
 
-            {/* Email */}
             <div className="card p-4 flex items-center gap-4">
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(59,130,246,0.12)" }}
-              >
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ background: "rgba(59,130,246,0.12)" }}>
                 <Mail size={18} color="#3b82f6" strokeWidth={1.8} />
               </div>
               <div>
@@ -64,12 +82,9 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Phone */}
             <div className="card p-4 flex items-center gap-4">
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(34,197,94,0.12)" }}
-              >
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ background: "rgba(34,197,94,0.12)" }}>
                 <Phone size={18} color="#22c55e" strokeWidth={1.8} />
               </div>
               <div>
@@ -78,12 +93,9 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Location */}
             <div className="card p-4 flex items-center gap-4">
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(139,92,246,0.12)" }}
-              >
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ background: "rgba(139,92,246,0.12)" }}>
                 <MapPin size={18} color="#8b5cf6" strokeWidth={1.8} />
               </div>
               <div>
@@ -92,52 +104,39 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Follow Me */}
             <div style={{ paddingTop: "8px" }}>
               <div style={{ color: "var(--text-primary)", fontWeight: 600, marginBottom: "12px" }}>Follow Me</div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-wrap">
                 <Link href="https://www.linkedin.com/in/itsnelitha" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}
-              >
-                <FaLinkedin size={18} color="#6b8afd" fill="#6b8afd" />
-              </Link>
-
-              <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}
-              >
-                <FaGithub size={18} color="#9aa0b8" fill="#9aa0b8" />
-              </Link>
-
-              <Link href="https://facebook.com/itsnelitha" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}
-              >
-                <FaFacebook size={18} color="#9aa0b8" fill="#9aa0b8" />
-              </Link>
-
-              <Link href="https://instagram.com/itsnelitha" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}
-              >
-                <FaInstagram size={18} color="#9aa0b8" fill="#9aa0b8" />
-              </Link>
-
-              <Link href="https://youtube.com/channel/UCMWmBMnq0nMeZisA3lo1YYQ" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}
-              >
-                <FaYoutube size={18} color="#ff3b3b" fill="#ff3b3b" />
-              </Link>
-
-              <Link href="https://tiktok.com/@itsnelitha" target="_blank" rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}
-              >
-                <FaTiktok size={18} color="#ffffff" />
-              </Link>
-
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
+                  <FaLinkedin size={18} color="#6b8afd" />
+                </Link>
+                <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
+                  <FaGithub size={18} color="#9aa0b8" />
+                </Link>
+                <Link href="https://facebook.com/itsnelitha" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
+                  <FaFacebook size={18} color="#9aa0b8" />
+                </Link>
+                <Link href="https://instagram.com/itsnelitha" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
+                  <FaInstagram size={18} color="#9aa0b8" />
+                </Link>
+                <Link href="https://youtube.com/channel/UCMWmBMnq0nMeZisA3lo1YYQ" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
+                  <FaYoutube size={18} color="#ff3b3b" />
+                </Link>
+                <Link href="https://tiktok.com/@itsnelitha" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
+                  <FaTiktok size={18} color="#ffffff" />
+                </Link>
               </div>
             </div>
           </div>
@@ -195,13 +194,21 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={status !== "idle"}
+                disabled={status === "sending" || status === "sent"}
                 className="btn-gradient w-full py-3 rounded-xl text-sm flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 {status === "sending" ? (
-                  "Sending..."
+                  <>
+                    <svg className="animate-spin" width="16" height="16" fill="none" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" strokeWidth="3"/>
+                      <path d="M12 2a10 10 0 0110 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                    </svg>
+                    Sending...
+                  </>
                 ) : status === "sent" ? (
-                  "✓ Message Sent!"
+                  <>✓ Message Sent!</>
+                ) : status === "error" ? (
+                  <>⚠ Failed — Try Again</>
                 ) : (
                   <>
                     <Send size={16} color="white" strokeWidth={2} />
