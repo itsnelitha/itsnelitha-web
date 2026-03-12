@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { FileClock, Book, Video, ExternalLink } from "lucide-react";
-import Link from "next/link";
 
 const projects = [
   {
@@ -131,14 +130,14 @@ export default function Projects() {
 
                   {/* External link icon */}
 
-                  <Link href={wideProject.link} target="_blank">
+                  <a href={wideProject.link} target="_blank">
                   <button
                     className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
                     style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #1e2235" }}
                   >
                     <ExternalLink size={14} color="#9aa0b8" strokeWidth={2} />
                   </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

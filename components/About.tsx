@@ -206,7 +206,7 @@ export default function About() {
 
           {/* Stats bar */}
           <div className="fade-up card p-6" style={{ transitionDelay: "240ms" }}>
-            <div className="grid grid-cols-3 divide-x" style={{ divideColor: "#1e2235" }}>
+            <div className="grid grid-cols-3 divide-x divide-[#1e2235]">
               {stats.map((s, i) => (
                 <div key={s.label} className="text-center px-6">
                   <div className="gradient-text font-bold text-2xl">{s.n}</div>
