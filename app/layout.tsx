@@ -7,7 +7,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nelitha Priyawansha - AI/ML Enthusiast & Full Stack Developer, Cinematographer",
+  title: "Nelitha Priyawansha - AI/ML Enthusiast & Developer, Cinematographer",
   description: "Portfolio of Nelitha Priyawansha, AI/ML Enthusiast and Full Stack Developer based in Panadura, Sri Lanka. Explore projects in web development, video production, and tech innovation.",
   
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   
   openGraph: {
-    title: "Nelitha Priyawansha - AI/ML & Full Stack Developer",
+    title: "Nelitha Priyawansha - AI/ML Enthusiast & Developer, Cinematographer",
     description: "Explore the portfolio of Nelitha Priyawansha, a Sri Lankan Full Stack Developer, AI/ML Enthusiast, and Cinematographer.",
     url: "https://itsnelitha.vercel.app",
     siteName: "Nelitha Priyawansha Portfolio",
