@@ -64,10 +64,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* FAB resume button */}
-      <button className="fab" title="Download Resume">
-        <FileText size={20} color="white" strokeWidth={2} />
-      </button>
+     
     </>
   );
 }

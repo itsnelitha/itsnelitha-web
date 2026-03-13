@@ -1,5 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Nelitha Priyawansha - AI/ML Enthusiast & Full Stack Developer, Cinematographer",
@@ -23,7 +28,6 @@ export const metadata: Metadata = {
   creator: "Nelitha Priyawansha",
   publisher: "Nelitha Priyawansha",
   applicationName: "Nelitha Portfolio",
-  colorScheme: "light",
   robots: "index, follow",
   
   openGraph: {

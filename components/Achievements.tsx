@@ -20,8 +20,8 @@ const achievements = [
     org2: "Sri Lanka",
     date: "August 2024",
     description: "The Prince of Wales' College Moratuwa website, which I developed and led the team for, won the Silver Award for Best School Website at BestWeb.lk 2024.",
-     icon: <Trophy size={22} color="#f59e0b" strokeWidth={1.8} />,
-    badge: { label: "1st Place", color: "#f59e0b", bg: "rgba(245,158,11,0.15)", border: "rgba(245,158,11,0.3)" },
+    icon: <Trophy size={22} color="#C0C0C0" strokeWidth={1.8} />,
+    badge: { label: "2nd Place", color: "#C0C0C0", bg: "rgba(192,192,192,0.15)", border: "rgba(192,192,192,0.3)" },
   },
   {
     title: "Merit Awardee – Young Computer Scientist",
