@@ -84,7 +84,7 @@ export default function AiAssistant() {
     <>
       {/* Floating bubble */}
       {!open && (
-        <button
+        <button aria-label="Chat with Nexa"
           onClick={() => setOpen(true)}
           className="fixed bottom-10 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95"
           style={{ background: "linear-gradient(135deg, #6b8afd, #a855f7)", boxShadow: "0 4px 24px rgba(107,138,253,0.5)" }}
@@ -131,14 +131,14 @@ export default function AiAssistant() {
               <div style={{ color: "var(--text-muted)", fontSize: "0.72rem" }}>Ask me about Nelitha</div>
             </div>
             <div className="flex items-center gap-1">
-              <button
+              <button aria-label="Maximize"
                 onClick={e => { e.stopPropagation(); setMinimized(m => !m); }}
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
                 style={{ color: "var(--text-muted)" }}
               >
                 {minimized ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
               </button>
-              <button
+              <button aria-label="Close"
                 onClick={e => { e.stopPropagation(); setOpen(false); setMinimized(false); }}
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
                 style={{ color: "var(--text-muted)" }}
@@ -213,7 +213,7 @@ export default function AiAssistant() {
               {messages.length <= 1 && (
                 <div className="px-4 pb-2 flex flex-wrap gap-2">
                   {SUGGESTIONS.map(s => (
-                    <button
+                    <button aria-label="Suggestions"
                       key={s}
                       onClick={() => send(s)}
                       className="text-xs px-3 py-1.5 rounded-full transition-all hover:opacity-80"
@@ -249,7 +249,7 @@ export default function AiAssistant() {
                       lineHeight: "1.4",
                     }}
                   />
-                  <button
+                  <button aria-label="Send"
                     onClick={() => send(input)}
                     disabled={!input.trim() || loading}
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all"

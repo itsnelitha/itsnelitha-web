@@ -130,8 +130,8 @@ export default function Projects() {
 
                   {/* External link icon */}
 
-                  <a href={wideProject.link} target="_blank">
-                  <button
+                  <a href={wideProject.link} target="_blank" aria-label="Project Link">
+                  <button aria-label="View Project"
                     className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
                     style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #1e2235" }}
                   >

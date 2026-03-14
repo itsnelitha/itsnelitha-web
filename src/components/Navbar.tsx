@@ -48,7 +48,7 @@ export default function Navbar() {
           }}
         >
           {navItems.map((item) => (
-            <button
+            <button aria-label="Go to Section"
               key={item.id}
               onClick={() => scrollTo(item.id)}
               title={item.id.charAt(0).toUpperCase() + item.id.slice(1)}

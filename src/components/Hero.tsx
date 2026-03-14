@@ -187,8 +187,8 @@ export default function Hero() {
 
           {/* Buttons row */}
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link href="https://www.linkedin.com/in/itsnelitha" target="_blank" rel="noopener noreferrer">
-              <button
+            <Link href="https://www.linkedin.com/in/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <button aria-label="Visit LinkedIn profile"
                 className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                 style={{ background: "rgba(255,255,255,0.07)", border: "1px solid #1e2235" }}
               >
@@ -196,8 +196,8 @@ export default function Hero() {
               </button>
             </Link>
 
-            <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer">
-              <button
+            <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="Github profile">
+              <button aria-label="Visit Github profile"
                 className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                 style={{ background: "rgba(255,255,255,0.07)", border: "1px solid #1e2235" }}
               >
@@ -205,8 +205,8 @@ export default function Hero() {
               </button>
             </Link>
 
-            <Link href="/Nelitha_Priyawansha_Resume.pdf" target="_blank" rel="noopener noreferrer" download={true}>
-              <button
+            <Link href="/Nelitha_Priyawansha_Resume.pdf" target="_blank" rel="noopener noreferrer" download={true} aria-label="Resume">
+              <button aria-label="Download Resume"
                 className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm relative text-white font-semibold"
                 style={{
                   background: "linear-gradient(135deg, #6b8afd, #a855f7)",

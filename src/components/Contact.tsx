@@ -107,32 +107,32 @@ export default function Contact() {
             <div style={{ paddingTop: "8px" }}>
               <div style={{ color: "var(--text-primary)", fontWeight: 600, marginBottom: "12px" }}>Follow Me</div>
               <div className="flex gap-3 flex-wrap">
-                <Link href="https://www.linkedin.com/in/itsnelitha" target="_blank" rel="noopener noreferrer"
+                <Link href="https://www.linkedin.com/in/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                   style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
                   <FaLinkedin size={18} color="#6b8afd" />
                 </Link>
-                <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer"
+                <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="Github profile"
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                   style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
                   <FaGithub size={18} color="#9aa0b8" />
                 </Link>
-                <Link href="https://facebook.com/itsnelitha" target="_blank" rel="noopener noreferrer"
+                <Link href="https://facebook.com/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                   style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
                   <FaFacebook size={18} color="#9aa0b8" />
                 </Link>
-                <Link href="https://instagram.com/itsnelitha" target="_blank" rel="noopener noreferrer"
+                <Link href="https://instagram.com/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile"
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                   style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
                   <FaInstagram size={18} color="#9aa0b8" />
                 </Link>
-                <Link href="https://youtube.com/channel/UCMWmBMnq0nMeZisA3lo1YYQ" target="_blank" rel="noopener noreferrer"
+                <Link href="https://youtube.com/channel/UCMWmBMnq0nMeZisA3lo1YYQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube profile"
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                   style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
                   <FaYoutube size={18} color="#ff3b3b" />
                 </Link>
-                <Link href="https://tiktok.com/@itsnelitha" target="_blank" rel="noopener noreferrer"
+                <Link href="https://tiktok.com/@itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="Tiktok profile"
                   className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                   style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #1e2235" }}>
                   <FaTiktok size={18} color="#ffffff" />
@@ -192,7 +192,7 @@ export default function Contact() {
                 />
               </div>
 
-              <button
+              <button aria-label="Send Email Message"
                 type="submit"
                 disabled={status === "sending" || status === "sent"}
                 className="btn-gradient w-full py-3 rounded-xl text-sm flex items-center justify-center gap-2 disabled:opacity-60"
