@@ -82,7 +82,7 @@ export default function Hero() {
       >
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.7 }} />
 
-        {/* Ambient glows — clamped so they don't escape the section */}
+        {/* Ambient glows */}
         <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-96 sm:h-96 pointer-events-none" style={{
           background: "radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 65%)",
           filter: "blur(40px)",
@@ -94,123 +94,133 @@ export default function Hero() {
 
         {/* Hero card */}
         <div className="relative z-10 w-full px-5 sm:px-0 flex justify-center">
-        <div
-          className="w-full max-w-xl p-6 sm:p-10 text-center"
-          style={{
-            background: "rgba(19, 21, 37, 0.75)",
-            border: "1px solid #1e2235",
-            borderRadius: "20px",
-            backdropFilter: "blur(20px)",
-            animation: "fadeUp 0.7s ease forwards",
-          }}
-        >
-          {/* Profile pic */}
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div
-                style={{
-                  width: "96px",
-                  height: "96px",
-                  borderRadius: "50%",
-                  padding: "3px",
-                  background: "linear-gradient(135deg, #6b8afd, #a855f7, #4fc3f7, #6b8afd)",
-                  backgroundSize: "300% 300%",
-                  animation: "spinGradient 3s linear infinite",
-                }}
-              >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "50%",
-                    background: "#161829",
-                    overflow: "hidden",
-                  }}
-                >
-                  <Image
-                    src="/dp.jpg"
-                    alt="Nelitha Priyawansha"
-                    width={100}
-                    height={100}
-                    style={{ objectFit: "cover", objectPosition: "center top" }}
-                  />
-                </div>
-              </div>
-              <span
-                style={{
-                  position: "absolute",
-                  bottom: "6px",
-                  right: "2px",
-                  width: "14px",
-                  height: "14px",
-                  borderRadius: "50%",
-                  background: "#22c55e",
-                  border: "2.5px solid #161829",
-                  animation: "pulseDot 2s ease-in-out infinite",
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Name */}
-          <h1
-            className="text-4xl sm:text-5xl font-bold mb-3"
+          <div
+            className="w-full max-w-xl p-6 sm:p-10 text-center"
             style={{
-              lineHeight: 1.1,
-              background: "linear-gradient(135deg, #6b8afd 0%, #4fc3f7 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              background: "rgba(19, 21, 37, 0.75)",
+              border: "1px solid #1e2235",
+              borderRadius: "20px",
+              backdropFilter: "blur(20px)",
+              animation: "fadeUp 0.7s ease forwards",
             }}
           >
-            Nelitha Priyawansha
-          </h1>
+            {/* Profile pic */}
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div
+                  style={{
+                    width: "96px",
+                    height: "96px",
+                    borderRadius: "50%",
+                    padding: "3px",
+                    background: "linear-gradient(135deg, #6b8afd, #a855f7, #4fc3f7, #6b8afd)",
+                    backgroundSize: "300% 300%",
+                    animation: "spinGradient 3s linear infinite",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "50%",
+                      background: "#161829",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <Image
+                      src="/dp.jpg"
+                      alt="Nelitha Priyawansha"
+                      width={100}
+                      height={100}
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                    />
+                  </div>
+                </div>
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: "6px",
+                    right: "2px",
+                    width: "14px",
+                    height: "14px",
+                    borderRadius: "50%",
+                    background: "#22c55e",
+                    border: "2.5px solid #161829",
+                    animation: "pulseDot 2s ease-in-out infinite",
+                  }}
+                />
+              </div>
+            </div>
 
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg mb-6" style={{ color: "#9aa0b8" }}>
-            <span style={{ color: "#6b8afd" }}>AI/ML Enthusiast, </span>
-            <span style={{ color: "#b5c3ee" }}>Developer, </span>
-            <span style={{ color: "#e8eaf0" }}>Videographer & Editor</span>
-          </p>
+            {/* Name */}
+            <h1
+              className="text-4xl sm:text-5xl font-bold mb-3"
+              style={{
+                lineHeight: 1.1,
+                background: "linear-gradient(135deg, #6b8afd 0%, #4fc3f7 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Nelitha Priyawansha
+            </h1>
 
-          {/* Location + Email */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8" style={{ color: "#9aa0b8", fontSize: "0.875rem" }}>
-            <span className="flex items-center gap-1.5">
-              <MapPin size={14} strokeWidth={2} />
-              Panadura, Sri Lanka
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Mail size={14} strokeWidth={2} />
-              itsnelitha@gmail.com
-            </span>
-          </div>
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg mb-6" style={{ color: "#9aa0b8" }}>
+              <span style={{ color: "#6b8afd" }}>AI/ML Enthusiast, </span>
+              <span style={{ color: "#b5c3ee" }}>Developer, </span>
+              <span style={{ color: "#e8eaf0" }}>Videographer & Editor</span>
+            </p>
 
-          {/* Buttons row */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link href="https://www.linkedin.com/in/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-              <button aria-label="Visit LinkedIn profile"
+            {/* Location + Email */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8" style={{ color: "#9aa0b8", fontSize: "0.875rem" }}>
+              <span className="flex items-center gap-1.5">
+                <MapPin size={14} strokeWidth={2} />
+                Panadura, Sri Lanka
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Mail size={14} strokeWidth={2} />
+                itsnelitha@gmail.com
+              </span>
+            </div>
+
+            {/* Buttons row */}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+
+              <a
+                href="https://www.linkedin.com/in/itsnelitha"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LinkedIn profile"
                 className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                 style={{ background: "rgba(255,255,255,0.07)", border: "1px solid #1e2235" }}
               >
                 <Linkedin size={18} color="#6b8afd" fill="#6b8afd" />
-              </button>
-            </Link>
+              </a>
 
-            <Link href="https://github.com/itsnelitha" target="_blank" rel="noopener noreferrer" aria-label="Github profile">
-              <button aria-label="Visit Github profile"
+              <a
+                href="https://github.com/itsnelitha"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit GitHub profile"
                 className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 hover:opacity-80"
                 style={{ background: "rgba(255,255,255,0.07)", border: "1px solid #1e2235" }}
               >
                 <Github size={18} color="#9aa0b8" fill="#9aa0b8" />
-              </button>
-            </Link>
+              </a>
 
-            <Link href="/Nelitha_Priyawansha_Resume.pdf" target="_blank" rel="noopener noreferrer" download={true} aria-label="Resume">
-              <button aria-label="Download Resume"
+              <a
+                href="/Nelitha_Priyawansha_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                aria-label="Download Resume"
                 className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm relative text-white font-semibold"
                 style={{
                   background: "linear-gradient(135deg, #6b8afd, #a855f7)",
                   transition: "opacity 0.2s, transform 0.2s",
+                  textDecoration: "none",
                 }}
                 onMouseEnter={e => (e.currentTarget.style.opacity = "0.9")}
                 onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
@@ -229,10 +239,10 @@ export default function Hero() {
                 />
                 <Download size={16} color="white" strokeWidth={2} />
                 Download Resume
-              </button>
-            </Link>
+              </a>
+
+            </div>
           </div>
-        </div>
         </div>
 
         {/* Scroll indicator */}
