@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ['300', '400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'block', 
+})
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -62,14 +70,13 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );

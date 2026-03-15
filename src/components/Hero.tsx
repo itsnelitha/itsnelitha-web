@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { MapPin, Mail, Linkedin, Github, Download } from "lucide-react";
 
 export default function Hero() {
